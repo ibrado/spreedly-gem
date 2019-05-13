@@ -313,6 +313,13 @@ module Spreedly
 
     def api_post(url, body, talking_to_gateway = true)
       xml_doc = ssl_post(url, body, headers, talking_to_gateway)
+      puts "[URL] "+url
+      puts "[BODY]"
+      puts body.inspect
+      puts "[HEADERS]"
+      puts headers.inspect
+      puts "[TRANSACTION DOC]"
+      puts xml_doc.inspect
       Transaction.new_from(xml_doc)
     end
 
